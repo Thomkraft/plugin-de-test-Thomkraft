@@ -26,6 +26,7 @@ public class commands implements CommandExecutor {
                 return true;
             }
 
+
             if(cmd.getName().equalsIgnoreCase("alert")) {
 
                 if(args.length == 0) {

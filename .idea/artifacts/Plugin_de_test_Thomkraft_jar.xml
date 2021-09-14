@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="Plugin 1.8 mc Thomkraft &amp; OhkLi:jar">
+  <artifact type="jar" build-on-make="true" name="Plugin de test Thomkraft:jar">
     <output-path>$PROJECT_DIR$/../../../serveur/plugins</output-path>
-    <root id="archive" name="Plugin 1.8 mc Thomkraft &amp; OhkLi.jar">
+    <root id="archive" name="Plugin de test Thomkraft.jar">
       <element id="module-output" name="Plugin 1.8 mc Thomkraft &amp; OhkLi" />
     </root>
   </artifact>
