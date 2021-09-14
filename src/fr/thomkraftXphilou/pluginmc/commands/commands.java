@@ -45,43 +45,67 @@ public class commands implements CommandExecutor {
                 }
                     return true;
                 }
+
             if(cmd.getName().equalsIgnoreCase("kit")) {
 
                 if(args.length == 0){
+                    StringBuilder bc = new StringBuilder();
+                    if(player.hasPermission("kit.joueur")){
+                        bc.append("Joueur ");
+                    }
+                    if(player.hasPermission("kit.vip")){
+                        bc.append("VIP, ");
+                    }
+                    Bukkit.broadcastMessage("Les kits disponibles sont : " + bc);
+                }else{
+                    if(args[0].equalsIgnoreCase("joueur")){
+                        Bukkit.broadcastMessage("Tu a recu le kit joueur !");
 
-                    ItemStack customsword = new ItemStack(Material.STONE_SWORD);
-                    ItemMeta customS = customsword.getItemMeta();
-                    customS.addEnchant(Enchantment.DAMAGE_ALL, 2, true);
-                    customsword.setItemMeta(customS);
-
-
-                    ItemStack customaxe = new ItemStack(Material.STONE_AXE);
-                    ItemMeta customA = customaxe.getItemMeta();
-                    customA.addEnchant(Enchantment.DIG_SPEED, 2, true);
-                    customaxe.setItemMeta(customA);
-
-
-                    ItemStack custompickaxe = new ItemStack(Material.STONE_PICKAXE);
-                    ItemMeta customP = custompickaxe.getItemMeta();
-                    customP.addEnchant(Enchantment.DIG_SPEED, 2, true);
-                    custompickaxe.setItemMeta(customP);
-
-                    ItemStack customsteak = new ItemStack(Material.COOKED_BEEF, 64);
-                    ItemMeta customC = customsteak.getItemMeta();
-                    customsteak.setItemMeta(customC);
+                        ItemStack customsword = new ItemStack(Material.STONE_SWORD);
+                        ItemMeta customS = customsword.getItemMeta();
+                        customS.addEnchant(Enchantment.DAMAGE_ALL, 2, true);
+                        customsword.setItemMeta(customS);
 
 
-                    player.getInventory().addItem(customsword, customaxe, custompickaxe, customsteak);
+                        ItemStack customaxe = new ItemStack(Material.STONE_AXE);
+                        ItemMeta customA = customaxe.getItemMeta();
+                        customA.addEnchant(Enchantment.DIG_SPEED, 2, true);
+                        customaxe.setItemMeta(customA);
 
 
-                }else {
-                    System.out.println("Tu na pas la permission !");
+                        ItemStack custompickaxe = new ItemStack(Material.STONE_PICKAXE);
+                        ItemMeta customP = custompickaxe.getItemMeta();
+                        customP.addEnchant(Enchantment.DIG_SPEED, 2, true);
+                        custompickaxe.setItemMeta(customP);
+
+                        ItemStack customsteak = new ItemStack(Material.COOKED_BEEF, 64);
+                        ItemMeta customC = customsteak.getItemMeta();
+                        customsteak.setItemMeta(customC);
+
+
+                        player.getInventory().addItem(customsword, customaxe, custompickaxe, customsteak);
+                    }else{
+                        Bukkit.broadcastMessage("Tu n'a pas la permission de recevoir ce kit !");
+                        StringBuilder bc = new StringBuilder();
+                        if(player.hasPermission("kit.joueur")){
+                            bc.append("Joueur ");
+                        }
+                        if(player.hasPermission("kit.vip")){
+                            bc.append("VIP, ");
+                        }
+                        Bukkit.broadcastMessage("Les kits disponibles sont : " + bc);
+                    }
+
                 }
-
-                //kit vip
-                //if(args[0].equalsIgnoreCase("vip") && player.hasPermission("kit.vip"))
-
-
+            }else{
+                StringBuilder bc = new StringBuilder();
+                if(player.hasPermission("kit.joueur")){
+                    bc.append("Joueur ");
+                }
+                if(player.hasPermission("kit.vip")){
+                    bc.append("VIP, ");
+                }
+                Bukkit.broadcastMessage("Les kits disponibles sont : " + bc);
 
             }
             if(cmd.getName().equalsIgnoreCase("start")) {
