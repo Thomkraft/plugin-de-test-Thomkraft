@@ -109,7 +109,7 @@ public class commands implements CommandExecutor {
 
                             player.getInventory().addItem(customsword, customaxe, custompickaxe, customsteak);
                         } else if (args[0].equalsIgnoreCase("vip") && player.hasPermission("kit.vip")) {
-                            Bukkit.broadcastMessage("§6 its good baby en chaussete");
+                            Bukkit.broadcastMessage("§6 c'est sencé donner le kit vip mais pas encore fais lol");
                         } else {
 
                             // ci pas la perms
