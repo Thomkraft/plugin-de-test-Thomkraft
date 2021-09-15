@@ -213,6 +213,12 @@ public class commands implements CommandExecutor {
                 player.sendMessage("tu a bien été téléporté aléatoirement en " + x +" " + y + " " + z);
 
             }
+            if(cmd.getName().equalsIgnoreCase("spawn")){
+
+
+
+            }
+
 
 
 

@@ -14,6 +14,8 @@ public class Main extends JavaPlugin {
                         "§9 º§2 Le Plugin PVP c'est bien allume  ! §9º\n" +
                         "§9 ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼"
                 );
+
+       // getCommand("spawn").setExecutor(new commandsSpawn());
         getCommand("test").setExecutor(new commands());
         getCommand("alert").setExecutor(new commands());
         getCommand("kit").setExecutor(new commands());

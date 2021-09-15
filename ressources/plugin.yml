@@ -12,3 +12,5 @@ commands:
   kit:
     description: ceci est un kit d'item
     permission: kit.use
+  spawn:
+    description: elle permet de retourné au spawn du monde
