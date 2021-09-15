@@ -120,14 +120,45 @@ public class commands implements CommandExecutor {
 
                         } else if (args[0].equalsIgnoreCase("gap") && player.hasPermission("kit.gap")) {
 
+                            //plastron p4 u4
                             ItemStack plastrond = new ItemStack(Material.DIAMOND_CHESTPLATE);
                             ItemMeta customplastron = plastrond.getItemMeta();
                             customplastron.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
-                            customplastron.addEnchant(Enchantment.DURABILITY, 3, true);
+                            customplastron.addEnchant(Enchantment.DURABILITY, 4, true);
                             plastrond.setItemMeta(customplastron);
 
+                            // casque p4 u4
+                            ItemStack casqued = new ItemStack(Material.DIAMOND_HELMET);
+                            ItemMeta customHelmet = casqued.getItemMeta();
+                            customHelmet.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+                            customHelmet.addEnchant(Enchantment.DURABILITY, 4, true);
+                            casqued.setItemMeta(customHelmet);
+
+                            //pantalon p4 u4
+                            ItemStack pantalond = new ItemStack(Material.DIAMOND_LEGGINGS);
+                            ItemMeta custompantalon = pantalond.getItemMeta();
+                            custompantalon.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+                            custompantalon.addEnchant(Enchantment.DURABILITY, 4,true);
+                            pantalond.setItemMeta(custompantalon);
+
+                            //bottes p4 u4
+                            ItemStack bottesd = new ItemStack(Material.DIAMOND_BOOTS);
+                            ItemMeta custombottes = bottesd.getItemMeta();
+                            custombottes.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+                            custombottes.addEnchant(Enchantment.DURABILITY, 4,true);
+                            bottesd.setItemMeta(custombottes);
+
+                            //notch apples
+                            ItemStack notchapple = new ItemStack(Material.GOLDEN_APPLE, 64);
+                            ItemMeta customnotch = notchapple.getItemMeta();
+                            notchapple.setItemMeta(customnotch);
 
                             player.getInventory().setChestplate(plastrond);
+                            player.getInventory().setHelmet(casqued);
+                            player.getInventory().setLeggings(pantalond);
+                            player.getInventory().setBoots(bottesd);
+                            player.getInventory().addItem(notchapple,casqued, plastrond, pantalond, bottesd);
+
 
 
                         } else {

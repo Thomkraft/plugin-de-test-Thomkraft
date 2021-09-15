@@ -12,8 +12,7 @@ public class monpluginlisterners implements Listener {
     public void onJoin(PlayerJoinEvent event) {
 
         Player player = event.getPlayer();
-        player.getInventory().clear();
-
+        //player.getInventory().clear();
 
 
         player.updateInventory();
