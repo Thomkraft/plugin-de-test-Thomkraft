@@ -7,7 +7,9 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        System.out.println("Le Plugin PVP est bien allumer a!");
+        System.out.println("");
+        System.out.println("Le Plugin PVP est bien allumer !");
+        System.out.println("");
         getCommand("test").setExecutor(new commands());
         getCommand("alert").setExecutor(new commands());
         getCommand("kit").setExecutor(new commands());
