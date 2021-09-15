@@ -64,6 +64,9 @@ public class commands implements CommandExecutor {
                     if(player.hasPermission("kit.vip")){
                         bc.append(", VIP ");
                     }
+                    if (player.hasPermission("kit.gap")){
+                        bc.append(", gap ");
+                    }
                     player.sendMessage("[PRIVATE] Les kits disponibles sont : " + bc);
                 }else {
 
@@ -76,6 +79,9 @@ public class commands implements CommandExecutor {
                         }
                         if (player.hasPermission("kit.vip")) {
                             bc.append(", VIP ");
+                        }
+                        if (player.hasPermission("kit.gap")){
+                            bc.append(", gap ");
                         }
                         player.sendMessage("[PRIVATE] Les kits disponibles sont : " + bc);
                     } else {
@@ -109,7 +115,21 @@ public class commands implements CommandExecutor {
 
                             player.getInventory().addItem(customsword, customaxe, custompickaxe, customsteak);
                         } else if (args[0].equalsIgnoreCase("vip") && player.hasPermission("kit.vip")) {
+
                             Bukkit.broadcastMessage("§6 c'est sencé donner le kit vip mais pas encore fais lol");
+
+                        } else if (args[0].equalsIgnoreCase("gap") && player.hasPermission("kit.gap")) {
+
+                            ItemStack plastrond = new ItemStack(Material.DIAMOND_CHESTPLATE);
+                            ItemMeta customplastron = plastrond.getItemMeta();
+                            customplastron.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+                            customplastron.addEnchant(Enchantment.DURABILITY, 3, true);
+                            plastrond.setItemMeta(customplastron);
+
+
+                            player.getInventory().setChestplate(plastrond);
+
+
                         } else {
 
                             // ci pas la perms
@@ -122,6 +142,9 @@ public class commands implements CommandExecutor {
                             if (player.hasPermission("kit.vip")) {
                                 bc.append(", VIP ");
                             }
+                            if (player.hasPermission("kit.gap")){
+                                bc.append(", gap ");
+                            }
                             player.sendMessage("[PRIVATE] Les kits disponibles sont : " + bc);
                         }
                     }
@@ -133,6 +156,9 @@ public class commands implements CommandExecutor {
                 }
                 if(player.hasPermission("kit.vip")){
                     bc.append(", VIP ");
+                }
+                if (player.hasPermission("kit.gap")){
+                    bc.append(", gap ");
                 }
                 player.sendMessage("[PRIVATE] Les kits disponibles sont : " + bc);
 
