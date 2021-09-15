@@ -9,7 +9,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() { //§2vert §9bleu
         Bukkit.getConsoleSender().sendMessage(
-                "\n§9 ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»\n" +
+                   "\n§9 ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»\n" +
                         "§9 º§2 Le Plugin PVP c'est bien allume  ! §9º\n" +
                         "§9 ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼"
                 );
@@ -24,7 +24,7 @@ public class Main extends JavaPlugin {
     public void onDisable() {
 
         Bukkit.getConsoleSender().sendMessage(
-                "\n§9 ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»\n" +
+                   "\n§9 ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»\n" +
                         "§9 º§4     le Plugin PVP c'est eteint     §9º\n" +
                         "§9 ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼"
         );

@@ -11,4 +11,4 @@ commands:
     permission: perm.use
   kit:
     description: ceci est un kit d'item
-    permission: kit.joueur
+    permission: kit.use

@@ -53,7 +53,8 @@ public class commands implements CommandExecutor {
             if(cmd.getName().equalsIgnoreCase("kit")) {
 
 
-                //NEW
+                //verif trop arguments
+
                 if(args.length >= 2 ){
                     player.sendMessage("[PRIVATE] Il y a trop d'argument !");
                     StringBuilder bc = new StringBuilder();
@@ -61,22 +62,27 @@ public class commands implements CommandExecutor {
                         bc.append("Joueur ");
                     }
                     if(player.hasPermission("kit.vip")){
-                        bc.append("VIP, ");
+                        bc.append(", VIP ");
                     }
                     player.sendMessage("[PRIVATE] Les kits disponibles sont : " + bc);
                 }else {
 
-                    if(args.length == 0){
+                    //verif ci jusst /kit
+
+                    if (args.length == 0) {
                         StringBuilder bc = new StringBuilder();
-                        if(player.hasPermission("kit.joueur")){
+                        if (player.hasPermission("kit.joueur")) {
                             bc.append("Joueur ");
                         }
-                        if(player.hasPermission("kit.vip")){
-                            bc.append("VIP, ");
+                        if (player.hasPermission("kit.vip")) {
+                            bc.append(", VIP ");
                         }
                         player.sendMessage("[PRIVATE] Les kits disponibles sont : " + bc);
-                    }else{
-                        if(args[0].equalsIgnoreCase("joueur")){
+                    } else {
+
+                        //verif du 1er args
+
+                        if (args[0].equalsIgnoreCase("joueur") && player.hasPermission("kit.joueur")) {
                             player.sendMessage("[PRIVATE] Tu a recu le kit joueur !");
 
                             ItemStack customsword = new ItemStack(Material.STONE_SWORD);
@@ -102,20 +108,23 @@ public class commands implements CommandExecutor {
 
 
                             player.getInventory().addItem(customsword, customaxe, custompickaxe, customsteak);
-                        }else{
+                        } else if (args[0].equalsIgnoreCase("vip") && player.hasPermission("kit.vip")) {
+                            Bukkit.broadcastMessage("§6 its good baby en chaussete");
+                        } else {
+
+                            // ci pas la perms
+
                             player.sendMessage("[PRIVATE] Tu n'a pas la permission de recevoir ce kit !");
                             StringBuilder bc = new StringBuilder();
-                            if(player.hasPermission("kit.joueur")){
+                            if (player.hasPermission("kit.joueur")) {
                                 bc.append("Joueur ");
                             }
-                            if(player.hasPermission("kit.vip")){
-                                bc.append("VIP, ");
+                            if (player.hasPermission("kit.vip")) {
+                                bc.append(", VIP ");
                             }
                             player.sendMessage("[PRIVATE] Les kits disponibles sont : " + bc);
                         }
-                }
-
-
+                    }
                 }
             }else{
                 StringBuilder bc = new StringBuilder();
@@ -123,7 +132,7 @@ public class commands implements CommandExecutor {
                     bc.append("Joueur ");
                 }
                 if(player.hasPermission("kit.vip")){
-                    bc.append("VIP, ");
+                    bc.append(", VIP ");
                 }
                 player.sendMessage("[PRIVATE] Les kits disponibles sont : " + bc);
 
