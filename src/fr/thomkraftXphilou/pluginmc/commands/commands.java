@@ -14,6 +14,9 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class commands implements CommandExecutor {
 
@@ -149,15 +152,36 @@ public class commands implements CommandExecutor {
                             bottesd.setItemMeta(custombottes);
 
                             //notch apples
-                            ItemStack notchapple = new ItemStack(Material.GOLDEN_APPLE, 64);
+                            ItemStack notchapple = new ItemStack(Material.GOLDEN_APPLE, 64, (short)1);
                             ItemMeta customnotch = notchapple.getItemMeta();
                             notchapple.setItemMeta(customnotch);
+
+                            //épée t5 u3 f2
+                            ItemStack epeed = new ItemStack(Material.DIAMOND_SWORD);
+                            ItemMeta customepee = epeed.getItemMeta();
+                            customepee.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+                            customepee.addEnchant(Enchantment.DURABILITY, 3, true);
+                            customepee.addEnchant(Enchantment.FIRE_ASPECT, 2, true);
+                            customepee.setDisplayName("§n§e KIT GAP");
+                            epeed.setItemMeta(customepee);
+
+                            //potion force
+                            ItemStack potion = new ItemStack(Material.POTION);
+                            PotionMeta potionforcemeta = (PotionMeta) potion.getItemMeta();
+                            PotionEffect speed = new PotionEffect(PotionEffectType.SPEED, 2200, 1, true, true);
+                            PotionEffect strenght = new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 2200, 1, true, true);
+                            PotionEffect fireresist = new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 10000, 1, true, true);
+                            potionforcemeta.addCustomEffect(speed, true);
+                            potionforcemeta.addCustomEffect(strenght, true);
+                            potionforcemeta.addCustomEffect(fireresist, true);
+                            potionforcemeta.setDisplayName("§c Potion force§r &§b Speed §r&§6 fire protection");
+                            potion.setItemMeta(potionforcemeta);
 
                             player.getInventory().setChestplate(plastrond);
                             player.getInventory().setHelmet(casqued);
                             player.getInventory().setLeggings(pantalond);
                             player.getInventory().setBoots(bottesd);
-                            player.getInventory().addItem(notchapple,casqued, plastrond, pantalond, bottesd);
+                            player.getInventory().addItem(epeed, notchapple,casqued, plastrond, pantalond, bottesd, potion);
 
 
 
