@@ -38,6 +38,8 @@ public class commands implements CommandExecutor {
 
 
 
+
+
             if(cmd.getName().equalsIgnoreCase("alert")) {
 
                 if(args.length == 0) {
